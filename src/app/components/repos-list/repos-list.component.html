@@ -1,0 +1,20 @@
+<div class="row"
+     *ngIf="listRepos | async as repos">
+  <div class="col-md-12"
+       *ngFor="let item of repos">
+    <div class="item p-2">
+      <div class="left-col">
+        <h4><a routerLink="/repo/{{item.name}}">{{item.name}}</a></h4>
+        <p>{{item.description}}</p>
+        <p>{{item.license?.name}}</p>
+      </div>
+      <div class="right-col">
+        <p>{{item.updated_at | date: 'medium'}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="not-found"
+       *ngIf="repos.length === 0">
+    <p>No repositories found</p>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-12"
+       *ngIf="repository | async as repo">
+    <p>Name: {{repo.name}}</p>
+    <p>Description: {{repo.description}}</p>
+    <p>License: {{repo.license?.name}}</p>
+    <button class="btn btn-success"
+            (click)="editRepo(repo.name)">Edit</button>
+  </div>
+</div>

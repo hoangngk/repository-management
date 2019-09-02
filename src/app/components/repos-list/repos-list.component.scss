@@ -1,0 +1,10 @@
+.item {
+  flex-direction: row;
+  display: flex;
+  border: 1px solid #CCCCCC;
+  border-bottom: none;
+
+  .right-col {
+    margin-left: auto;
+  }
+}
